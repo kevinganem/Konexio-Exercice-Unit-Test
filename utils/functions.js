@@ -8,8 +8,17 @@ function isEven(number) {
   }
 }
 
-function formatDate(date) {
-  return date.split("-").reverse().join("/");
+function formatDate(input) {
+  const date = new Date(input);
+  if (Object.prototype.toString.call(date) === "[object Date]") {
+    if (isNaN(date.getTime())) {
+      return null;
+    } else {
+      return input.split("-").reverse().join("/");
+    }
+  } else {
+    return null;
+  }
 }
 
 module.exports = {

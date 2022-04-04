@@ -36,14 +36,14 @@ describe("is even ?", () => {
 
 describe("Format date", () => {
   it("From yyyy-mm-dd should return dd/mm/yyyy", () => {
-    const result = functions.formatDate("yyyy-mm-dd");
-    expect(result).toBe("dd/mm/yyyy");
+    const result = functions.formatDate("1992-01-05");
+    expect(result).toBe("05/01/1992");
   });
 });
 
 describe("Format date", () => {
   it("Should return null from bad input", () => {
-    const result = functions.formatDate("yyyymmdd");
+    const result = functions.formatDate("19920105");
     expect(result).toBe(null);
   });
 });
